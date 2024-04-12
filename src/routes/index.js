@@ -1,5 +1,6 @@
 const auth = require('./auth');
 const user = require('./user');
+const blog = require('./blog');
 const authenticate = require('../middlewares/authenticate');
 
 module.exports = app => {
@@ -8,4 +9,5 @@ module.exports = app => {
     });
     app.use('/api/auth', auth);
     app.use('/api/user', authenticate, user);
+    app.use('/api/blog', blog);
 };
